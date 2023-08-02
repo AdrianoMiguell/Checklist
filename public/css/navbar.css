@@ -1,0 +1,31 @@
+
+nav{
+    background-color: rgb(var(--quat-c)); 
+}
+.navbar-title{
+    color: rgb(var(--sec-c)) !important;
+    text-shadow: .5px .5px rgb(var(--quin-c));
+}
+.navbar-box{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+.navbar-box>div{
+    text-align: center;
+}
+.navbar-box>div:hover:not(:nth-child(1)){
+    background-color: rgba(var(--quat-c), .4);
+}
+
+/* 
+@media screen and (max-width: 768px) {
+    .navbar-box{
+        
+    }
+}
+@media screen and (min-width: 768px) {
+    .navbar-box{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+} */
