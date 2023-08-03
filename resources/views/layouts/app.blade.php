@@ -42,6 +42,9 @@
 
         <!-- Page Content -->
         <main>
+            <section class="m-0 sec-welcome">
+                @yield('welcome')
+            </section>
             <section class="m-1">
                 @yield('newList')
             </section>

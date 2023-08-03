@@ -8,9 +8,10 @@
             @if (Route::has('login'))
                 <ul class="navbar-nav">
                     @auth
-                        <div class="dropdown" >
+                        <div class="dropdown">
                             <a class="text-decoration-none p-2 rounded-2" href="#" role="button"
-                                data-bs-toggle="dropdown" aria-expanded="false" style="background-color: rgb(var(--quin-c)); color: rgb(var(--tert-c))">
+                                data-bs-toggle="dropdown" aria-expanded="false"
+                                style="background-color: rgb(var(--quin-c)); color: rgb(var(--tert-c))">
                                 <span>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
@@ -40,12 +41,13 @@
                             </ul>
                         </div>
                     @else
-                        <a href="{{ route('login') }}">Log
-                            in</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
+                        <div class="d-flex">
+                            <a href="{{ route('login') }}" class="btnG btnG-dark-green">Log
+                                in</a>
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}" class="btnG btnG-dark-green">Register</a>
+                            @endif
+                        </div>
                     @endauth
             @endif
         </div>

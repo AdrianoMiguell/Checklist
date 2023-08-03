@@ -59,9 +59,15 @@ body{
     background-color: rgb(var(--quin-c));
     color: rgb(var(--tert-c));
 }
+.btnG-dark-green:hover, .btnG-dark-green:active{
+    background-color: rgba(var(--quin-c), .8);
+}
 .btnG-light-green{
     background-color: rgb(var(--tert-c));
     color: rgb(var(--quin-c));
+}
+.btnG-light-green:hover, .btnG-light-green:active{
+    background-color: rgba(var(--tert-c), .8);
 }
 #modalList{
     width: 50px;
