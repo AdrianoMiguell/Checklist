@@ -1,21 +1,41 @@
-
-nav{
-    background-color: rgb(var(--quat-c)); 
+nav {
+    background-color: rgb(var(--quat-c));
 }
-.navbar-title{
+.navbar-title {
     color: rgb(var(--sec-c)) !important;
-    text-shadow: .5px .5px rgb(var(--quin-c));
+    text-shadow: 0.5px 0.5px rgb(var(--quin-c));
 }
-.navbar-box{
+.navbar-box {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
 }
-.navbar-box>div{
+.navbar-box > div {
     text-align: center;
 }
-.navbar-box>div:hover:not(:nth-child(1)){
-    background-color: rgba(var(--quat-c), .4);
+.navbar-box > div:hover:not(:nth-child(1)) {
+    background-color: rgba(var(--quat-c), 0.4);
 }
+.dropdown-menu {
+    margin-top: 7.5px !important;
+    width: 100%;
+    background-color: rgb(var(--quin-c)) !important;
+}
+.dropdown-item {
+    text-align: center !important;
+}
+.dropdown-item a {
+    text-decoration: none;
+    color: rgb(var(--sec-c));
+}
+.dropdown-item:hover {
+    background-color: rgb(var(--quat-c)) !important;
+}
+.dropdown-item a:hover {
+    color: rgb(var(--tert-c));
+}
+/* .dropdown-menu {
+    background-color: rgb(var(--quin-c)) !important;
+} */
 
 /* 
 @media screen and (max-width: 768px) {

@@ -15,7 +15,7 @@
     }
 
     .sec-welcome img {
-        width: 450px;
+        width: 320px;
         height: auto;
     }
 
@@ -26,9 +26,11 @@
         padding-top: 1em;
     }
     .msg_welcome h1 {
+        margin-top: 10px;
         text-align: center;
-        font-size: 40pt;
+        font-size: 30pt;
         color: rgb(var(--quin-c));
+        font-weight: 650;
     }
 </style>
 
@@ -36,7 +38,7 @@
 
 @section('welcome')
     <div class="msg_welcome">
-        <h1> Bem vindo! </h1>
+        <h1> Organize o seu dia! <br> Use um checklist </h1>
     </div>
 
     <img src="/img/org_checklist.jpg" alt="">

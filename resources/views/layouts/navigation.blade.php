@@ -24,6 +24,10 @@
 
                             <ul class="dropdown-menu position-absolute">
                                 <li>
+                                    <div class="dropdown-item"> <a class="d-block w-100" href="{{ route('profile.edit') }}">
+                                            Perfil </a> </div>
+                                </li>
+                                <li>
                                     <div class="dropdown-item">
                                         <form method="POST" action="{{ route('logout') }}">
                                             @csrf
@@ -33,10 +37,6 @@
                                             </a>
                                         </form>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="dropdown-item"> <a class="d-block w-100" href="{{ route('profile.edit') }}">
-                                            Perfil </a> </div>
                                 </li>
                             </ul>
                         </div>

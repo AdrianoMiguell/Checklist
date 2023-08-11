@@ -22,9 +22,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
-
-    <!-- Scripts -->
-    {{-- @vite(['resources/css/app.css', 'resources/js/app.js']) --}}
 </head>
 
 <body class="font-sans antialiased">
@@ -51,7 +48,9 @@
             <section class="m-1 checklists">
                 @yield('content')
             </section>
-            {{-- {{ $slot }} --}}
+            @if (isset($slot))
+                {{ $slot }}
+            @endif
         </main>
     </div>
 
