@@ -1,7 +1,9 @@
 nav {
-    background-color: rgb(var(--quat-c));
+    background-color: rgb(var(--quin-c));
 }
 .navbar-title {
+    font-size: 25pt;
+    font-family: "Architects Daughter", cursive;
     color: rgb(var(--sec-c)) !important;
     text-shadow: 0.5px 0.5px rgb(var(--quin-c));
 }

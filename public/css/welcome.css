@@ -1,0 +1,18 @@
+
+
+.efeitoImg {
+    margin: 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("/img/desk-organizada.jpg");
+    background-attachment: fixed;
+    background-clip: content-box;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 600px;
+    width: 100%;
+    box-shadow: 0 0 75px rgba(var(--main-c), .75) inset;
+}
