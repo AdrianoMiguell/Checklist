@@ -37,8 +37,8 @@
                             <textarea name="name" id="name" cols="58" rows="1" class="form-control" maxlength="80"></textarea>
                         </div>
                         <div class="my-1">
-                            <label for="date" class="form-label"> list date </label>
-                            <input type="date" name="listDate" id="date" class="form-control">
+                            <label for="createDate" class="form-label"> list date </label>
+                            <input type="date" name="listDate" id="createDate" class="date form-control" >
                         </div>
 
                         <div class="w-100 d-flex justify-content-end my-2">
@@ -63,9 +63,11 @@
 @section('dashboard')
 
     @foreach ($checklist as $key => $c)
+
+    {{-- @if($c->listDate ) --}}
         <div class="checklist-card">
             <a href="{{ route('task.create', ['id' => $c->id]) }}" class="text-white d-block w-100">
-                <span class="d-inline" style="font-size: 8pt; color: rgb(var(--quat-c));">
+                <span class="d-inline listDate" style="font-size: 8pt; color: rgb(var(--quat-c));">
                     {{ date('d-m-Y', strtotime($c->listDate)) }}
                 </span>
                 <h5>
@@ -114,8 +116,8 @@
                                         <textarea name="name" id="name" cols="58" rows="1" class="form-control">{{ $c->name }}</textarea>
                                     </div>
                                     <div class="my-1">
-                                        <label for="date" class="form-label"> list date </label>
-                                        <input type="date" name="listDate" id="date" class="form-control"
+                                        <label for="putDate" class="form-label"> list date </label>
+                                        <input type="date" name="listDate" id="putDdate" class="form-control date"
                                             value="{{ $c->listDate }}">
                                     </div>
                                     <input type="hidden" name="id" value="{{ $c->id }}">

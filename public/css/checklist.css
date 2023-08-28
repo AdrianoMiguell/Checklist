@@ -10,6 +10,13 @@ nav{
     background-color: rgba(var(--light-c), .1);
 }
 
+.navbar-title {
+    font-size: 25pt;
+    font-family: "Architects Daughter", cursive;
+    color: rgb(var(--sec-c)) !important;
+    text-shadow: .5px .5px .5px rgba(var(--quin-c), .75) !important;
+}
+
 .img-search {
     position: absolute;
     top: 30%;

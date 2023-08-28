@@ -4,7 +4,7 @@
     <div class="text-start w-100 m-5">
 
         <div class="d-flex align-items-center justify-content-between mx-5">
-            <h3> Checklist : {{ $checklist->name }} </h3>
+            <h3> Checklist | {{ $checklist->name }} </h3>
 
             <!-- Button trigger modal -->
             <button type="button" class="btnG btnG-green rounded-circle p-1" data-bs-toggle="modal" data-bs-target="#newTask"

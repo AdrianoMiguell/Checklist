@@ -67,21 +67,7 @@
             @endforeach
         </div>
     @endif
-
-    <footer class="mb-0">
-        <div class="my-4 text-center mx-2">
-            <span class="mt-5" style="color: #e4c413;"> Made with
-                <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor"
-                    class="bi bi-heart-fill" viewBox="0 0 16 16">
-                    <path fill-rule="evenodd"
-                        d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314z" />
-                </svg>
-
-            </span>
-
-        </div>
-    </footer>
-
+    
     <script src="./js/geral.js"></script>
 
 </body>

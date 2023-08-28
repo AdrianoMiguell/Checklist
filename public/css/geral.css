@@ -36,6 +36,10 @@
     --light-c: 239, 239, 239;
 }
 
+body{
+    min-height: 100vh;
+}
+
 footer{
     margin-top: 5rem !important;
 }
@@ -44,4 +48,11 @@ footer{
     bottom: 0;
     left: 10%;
     right: 10%;
+}
+
+.datePassed{
+    background-color: rgba(255, 94, 108, 0.25) !important;
+}
+.datePassed .listDate{
+    color: rgb(255, 145, 154) !important;
 }
