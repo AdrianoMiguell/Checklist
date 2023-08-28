@@ -1,0 +1,26 @@
+.btnG {
+    border-radius: 5px;
+    padding: 5px 10px;
+    margin: 1em;
+    border: none !important;
+}
+.btnG-green {
+    background-color: rgb(var(--sec-c));
+    box-shadow: 0px 0px 5px rgb(var(--quin-c));
+}
+.btnG-dark-green {
+    background-color: rgb(var(--quin-c));
+    color: rgb(var(--tert-c));
+}
+.btnG-dark-green:hover,
+.btnG-dark-green:active {
+    background-color: rgba(var(--quin-c), 0.8);
+}
+.btnG-light-green {
+    background-color: rgb(var(--tert-c));
+    color: rgb(var(--quin-c));
+}
+.btnG-light-green:hover,
+.btnG-light-green:active {
+    background-color: rgba(var(--tert-c), 0.8);
+}

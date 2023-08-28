@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('content')
+@section('dashboard')
     <div class="text-start w-100 m-5">
 
         <div class="d-flex align-items-center justify-content-between mx-5">

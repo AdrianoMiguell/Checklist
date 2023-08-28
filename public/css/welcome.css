@@ -1,4 +1,6 @@
-
+body{
+    min-height: 90vh;
+}
 
 .efeitoImg {
     margin: 0;
@@ -14,5 +16,82 @@
     background-size: cover;
     height: 600px;
     width: 100%;
-    box-shadow: 0 0 75px rgba(var(--main-c), .75) inset;
+    /* box-shadow: 0 0 75px rgba(var(--main-c), .75) inset; */
+}
+
+.msg_welcome {
+    position: absolute;
+    margin: 15px 10em;
+}
+
+.msg_welcome h1,
+.msg_welcome .fraseMotivacional {
+    text-align: center;
+    color: rgb(var(--quin-c));
+    text-shadow: .25px .25px .5px rgb(var(--dark-c));
+}
+
+.msg_welcome h1 {
+    font-size: 25pt;
+    font-weight: 650;
+}
+
+.msg_welcome .fraseMotivacional {
+    font-size: 13pt;
+    font-weight: 450;
+}
+
+.cardSection {
+    position: relative;
+    margin: 10rem 5rem;
+}
+
+.cardSection>.section {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    gap: 25px 15px;
+}
+
+.titleCard {
+    margin: 1.5em 0;
+    text-align: center;
+    color: rgb(var(--quin-c));
+}
+
+.card {
+    width: 225px;
+    height: 225px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    background-color: rgb(var(--quin-c));
+    border: none;
+}
+
+.imgCard {
+    width: 100%;
+    height: 100%;
+    background-position: center right;
+    background-size: cover;
+}
+
+.textCard {
+    padding: .25em 0;
+    color: rgb(var(--sec-c));
+    font-weight: 600;
+    border-radius: 5px;
+}
+
+.inviteClick{
+    height: 200px;
+    margin: 10.5rem 0;
+}
+
+footer{
+    padding: 1rem 0;
+    background-color: rgb(var(--dark-c));
+    color: rgb(var(--sec-c));
 }

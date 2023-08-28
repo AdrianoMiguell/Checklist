@@ -1,45 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Inter&Architects+Daughter&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Inter&Architects+Daughter&display=swap");
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    text-decoration: none !important;
-}
-
-/* Cores: 
-    #teste{
-        color: #1168FF;
-        color: #1FFA8A;
-        color: #86F4C1;
-        color: #4DA3A1;
-        color: #487070;
-    }
-    */
-    #teste{
-        color: rgb(21, 68, 148);
-        color: rgb(31, 250, 138);
-        color: rgb(134, 244, 193);
-        color: rgb(77, 163, 161);
-        color: rgb(72, 112, 112);
-        color: rgb(45, 45, 60);
-    }
-    
-:root{
-    --main-c: 21, 68, 148;
-    --sec-c: 31, 250, 138;
-    --tert-c: 134, 244, 193;
-    --quat-c: 77, 163, 161;
-    --quin-c: 72, 112, 112;
-    --dark-c: 45, 45, 60;
-}
-
-body{
-    background-color: rgba(10, 10, 15, .9) !important;
+body {
+    background-color: rgb(var(--dark-c)) !important;
     color: white !important;
+    overflow-x: hidden !important;
 }
 
-.img-search{
+nav{
+    background-color: rgba(var(--light-c), .1);
+}
+
+.img-search {
     position: absolute;
     top: 30%;
     left: 30%;
@@ -47,82 +18,58 @@ body{
     height: 250px;
 }
 
-.btnG{
-    border-radius: 5px;
-    padding: 5px 10px;
-    margin: 1em;
-    border: none !important;
-}
-.btnG-green{
-    background-color: rgb(var(--sec-c));
-    box-shadow: 0px 0px 5px rgb(var(--quin-c));
-}
-.btnG-dark-green{
-    background-color: rgb(var(--quin-c));
-    color: rgb(var(--tert-c));
-}
-.btnG-dark-green:hover, .btnG-dark-green:active{
-    background-color: rgba(var(--quin-c), .8);
-}
-.btnG-light-green{
-    background-color: rgb(var(--tert-c));
-    color: rgb(var(--quin-c));
-}
-.btnG-light-green:hover, .btnG-light-green:active{
-    background-color: rgba(var(--tert-c), .8);
-}
-#modalList{
+#modalList {
     width: 50px;
     height: 50px;
     border-radius: 100%;
 }
 
-.newChecklist{
+.newChecklist {
     width: 250px;
     height: auto;
     background-color: rgb(var(--quin-c));
     color: rgb(var(--tert-c));
 }
-.newChecklist>legend{
+.newChecklist > legend {
     color: rgb(var(--sec-c));
 }
 
-.checklists{
+.checklists {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
-    gap: .5em;
+    gap: 0.5em;
 }
 
-.checklist-card{
+.checklist-card {
     display: flex;
     justify-content: space-between;
     align-items: center;
     color: aliceblue;
     width: 30em;
-    background-color: rgb(var(--dark-c));
+    background-color: rgba(var(--light-c), .1);
     margin: 1em 0 1em 3em;
-    padding: .5em 1em;
-
+    padding: 0.5em 1em;
 }
 
-.checklist-task{
-    margin: .75em 0;
+.checklist-task {
+    margin: 0.75em 0;
     border-radius: 5px;
     display: grid;
     row-gap: 1em;
-    padding: .75em;
+    padding: 0.75em;
 }
-.checklist-task>div{
-    background-color: rgb(var(--dark-c));
+.checklist-task > div {
+    background-color: rgba(var(--light-c), .1);
+    border: 1px solid rgba(var(--light-c), .1);
 }
 
-.task-checked~label{
+.task-checked ~ label {
     color: rgb(var(--tert-c));
     text-decoration: line-through !important;
 }
 
-.actions{
+.actions {
     display: flex;
     align-items: center;
     justify-content: space-between;

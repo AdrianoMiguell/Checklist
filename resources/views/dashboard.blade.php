@@ -14,7 +14,7 @@
     </section> --}}
 
     <!-- Button trigger modal -->
-    <button type="button" class="btnG btnG-green" data-bs-toggle="modal" data-bs-target="#newList" id="modalList">
+    <button type="button" class="btnG btnG-green p-0" data-bs-toggle="modal" data-bs-target="#newList" id="modalList">
         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-plus"
             viewBox="0 0 16 16">
             <path
@@ -60,7 +60,7 @@
     </div>
 @endsection
 
-@section('content')
+@section('dashboard')
 
     @foreach ($checklist as $key => $c)
         <div class="checklist-card">
