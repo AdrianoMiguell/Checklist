@@ -31,13 +31,13 @@ nav{
     border-radius: 100%;
 }
 
-.newChecklist {
+.formChecklist {
     width: 250px;
     height: auto;
     background-color: rgb(var(--quin-c));
     color: rgb(var(--tert-c));
 }
-.newChecklist > legend {
+.formChecklist > legend {
     color: rgb(var(--sec-c));
 }
 
@@ -49,6 +49,7 @@ nav{
 }
 
 .checklist-card {
+    order: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -57,6 +58,14 @@ nav{
     background-color: rgba(var(--light-c), .1);
     margin: 1em 0 1em 3em;
     padding: 0.5em 1em;
+    transition: .25s linear;
+}
+.checklist-card:hover{
+    box-shadow: 0 0 1px 1px rgba(var(--light-c), .5);
+} 
+.checklist-card .checklist-date {
+    font-size: small;
+    color: rgba(var(--light-c), .85);
 }
 
 .checklist-task {
@@ -80,4 +89,25 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+
+.datePassed{
+    order: 3;
+    background-color: rgba(255, 94, 108, 0.2) !important;
+}
+.datePassed:hover{
+    box-shadow: 0 0 1px 1px rgb(255, 94, 108);
+}
+.datePassed .listDate{
+    color: rgb(255, 145, 154) !important;
+}
+.dateAgo {
+    order: 1;
+    background-color: rgba(253, 233, 165, 0.2) !important;
+}
+.dateAgo:hover {
+    box-shadow: 0 0 1px 1px rgb(255, 233, 159);
+}
+.dateAgo .listDate{
+    color: rgb(255, 233, 159) !important;
 }

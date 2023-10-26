@@ -1,5 +1,6 @@
 body{
     min-height: 90vh;
+    color: rgb(var(--light-c));
 }
 
 .efeitoImg {
@@ -86,12 +87,6 @@ body{
 }
 
 .inviteClick{
-    height: 200px;
-    margin: 10.5rem 0;
-}
-
-footer{
-    padding: 1rem 0;
-    background-color: rgb(var(--dark-c));
-    color: rgb(var(--sec-c));
+    margin: 1.5rem auto;
+    color: rgb(var(--light-c));
 }

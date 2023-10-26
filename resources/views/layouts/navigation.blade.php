@@ -11,15 +11,16 @@
                         <div class="dropdown">
                             <a class="text-decoration-none p-2 rounded-2" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false"
-                                style="background-color: rgb(var(--quin-c)); color: rgb(var(--tert-c))">
-                                <span>
+                                class="btnG btnG-green"
+                                >
+                                <span class="d-flex gap-1 align-items-center position-relative">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                                         fill="currentColor" class="bi bi-person" viewBox="0 0 16 16">
                                         <path
                                             d="M8 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Zm2-3a2 2 0 1 1-4 0 2 2 0 0 1 4 0Zm4 8c0 1-1 1-1 1H3s-1 0-1-1 1-4 6-4 6 3 6 4Zm-1-.004c-.001-.246-.154-.986-.832-1.664C11.516 10.68 10.289 10 8 10c-2.29 0-3.516.68-4.168 1.332-.678.678-.83 1.418-.832 1.664h10Z" />
                                     </svg>
+                                    {{ Auth::user()->name }}
                                 </span>
-                                {{ Auth::user()->name }}
                             </a>
 
                             <ul class="dropdown-menu position-absolute">
@@ -42,7 +43,7 @@
                         </div>
                     @else
                         <div class="d-flex">
-                            <a href="{{ route('login') }}" class="btnG btnG-dark-green">Log
+                            <a href="{{ route('login') }}" class="btnG btnG-green">Log
                                 in</a>
                             @if (Route::has('register'))
                                 <a href="{{ route('register') }}" class="btnG btnG-dark-green">Register</a>

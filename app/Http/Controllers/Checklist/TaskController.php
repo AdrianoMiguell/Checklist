@@ -16,6 +16,8 @@ class TaskController extends Controller
 
         $request->validate([
             'description' => 'required'
+        ], [
+            'description' => ['required' => 'Provide a description of your task']
         ]);
 
         $task = $request->except('token');
@@ -25,7 +27,7 @@ class TaskController extends Controller
 
         Task::create($task);
 
-        return redirect()->route('task.create', ['id' => $id]);
+        return redirect()->route('task.view', ['id' => $id])->with('status', 'New Task created');
     }
 
     public function task_status(Request $request)
@@ -43,7 +45,7 @@ class TaskController extends Controller
             $task->save();
         }
 
-        return redirect()->route('task.create', ['id' => $id]);
+        return redirect()->route('task.view', ['id' => $id]);
     }
 
 
@@ -56,11 +58,12 @@ class TaskController extends Controller
         );
 
         $task = $request->except('token');
-
         $task_ago = Task::findOrFail($task['id']);
+        $checklist_id_ago = $task_ago['checklist_id'];
         $task_ago['conclusion'] = false;
+
         $task_ago->update($task);
-        return redirect()->route('task.create', ['id' => $task['checklist_id']])->with('status', 'Task updated');
+        return redirect()->route('task.view', ['id' => $checklist_id_ago])->with('status', 'Task updated');
     }
 
     public function task_delete(Request $request)
@@ -76,6 +79,44 @@ class TaskController extends Controller
         $task->delete();
         $id = $request->checklist_id;
 
-        return redirect()->route('task.create', ['id' => $id])->with('status', 'Task deleted');
+        return redirect()->route('task.view', ['id' => $id])->with('status', 'Task deleted');
+    }
+
+    public function task_import(Request $request)
+    {
+
+        $id = $request['checklist_id'];
+
+        $listTasks = explode("\n", $request['description']);
+
+        $request['conclusion'] = false;
+
+        foreach ($listTasks as $task) {
+            if (empty(trim($task)) == true) {
+                print(trim($task));
+                $request['description'] = trim($task);
+                print(" \t Description: " . trim($task));
+                $taskToCreate = $request->except('token');
+                Task::create($taskToCreate);
+            } else {
+                print_r("Vazio" . $task);
+            }
+        }
+
+        return redirect()->route('task.view', ['id' => $id])->with('status', 'List of tasks created successfully');
+    }
+
+    public function task_delete_all(Request $request)
+    {
+
+        $id = $request->checklist_id;
+
+        $tasks = Task::where('checklist_id', $request['checklist_id'])->get();
+
+        foreach ($tasks as $task) {
+            $task->delete();
+        }
+
+        return redirect()->route('task.view', ['id' => $id])->with('status', 'Tasks deleted successfully');
     }
 }

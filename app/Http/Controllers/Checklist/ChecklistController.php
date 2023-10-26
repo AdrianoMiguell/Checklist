@@ -19,15 +19,18 @@ class ChecklistController extends Controller
             [
                 'name' => 'required|string|max:1000',
                 'listDate' => 'required|date'
+            ],
+            [
+                'name' => ['required' => 'The name field is required. ', 'string|max:1000' => 'Shorten the name field further. '],
+                'listDate' => ['required' => 'The date field is required. ']
             ]
         );
 
         $checklist = $request->except('token');
         $checklist['user_id'] = Auth::user()->id;
-        // dd($checklist);
         $checklist = Checklist::create($checklist);
 
-        return redirect()->route('dashboard')->with('status', 'New to-do list');
+        return redirect()->route('dashboard')->with('status', 'New to-do list created successfully');
     }
 
     public function edit(Request $request)
@@ -46,7 +49,7 @@ class ChecklistController extends Controller
 
         $checklist_ago = Checklist::findOrFail($checklist['id']);
         $checklist_ago->update($checklist);
-        return redirect()->route('dashboard')->with('status', 'To-do list updated');
+        return redirect()->route('dashboard')->with('status', 'To-do list updated successfully');
     }
 
     public function delete(Request $request)
@@ -69,24 +72,25 @@ class ChecklistController extends Controller
 
         $checklist->delete();
 
-        return redirect()->route('dashboard')->with('status', 'To-do list deleted');
+        return redirect()->route('dashboard')->with('status', 'To-do list deleted successfully');
     }
 
-    public function view()
+    public function view_dashboard()
     {
         $checklist = Checklist::Where('user_id', Auth::user()->id)
-            ->orderBy('listDate', 'asc')
+            ->orderBy('listDate', 'desc')
             ->get();
         return view('dashboard', compact('checklist'));
     }
 
-    public function create_task(Request $request)
+    public function view_task(Request $request)
     {
         $checklist = Checklist::findOrFail($request->id);
+        $all_checklists = Checklist::all();
         $tasks = Task::where('checklist_id', $request->id)
-        ->orderBy('conclusion', 'desc')
-        ->get();
+            ->orderBy('conclusion', 'asc')
+            ->get();
 
-        return view('checklist', compact('checklist', 'tasks'));
+        return view('checklist', compact('all_checklists', 'checklist', 'tasks'));
     }
 }

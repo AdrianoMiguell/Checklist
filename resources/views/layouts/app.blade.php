@@ -18,11 +18,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
     </script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
 
     <!-- Style -->
     <link rel="stylesheet" href="./css/geral.css">
     <link rel="stylesheet" href="./css/navbar.css">
-
     <link rel="stylesheet" href="./css/checklist.css">
 
 </head>
@@ -60,6 +60,7 @@
         </div>
     @endif
 
+
     @if ($errors->any())
         <div class="alert alert-danger position-fixed end-0 bottom-0 m-2">
             @foreach ($errors->all() as $error)
@@ -67,8 +68,9 @@
             @endforeach
         </div>
     @endif
-    
+
     <script src="./js/geral.js"></script>
+    <script src="./js/alert.js"></script>
 
 </body>
 

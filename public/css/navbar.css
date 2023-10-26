@@ -1,11 +1,17 @@
 nav {
-    background-color: rgb(var(--ligthtc));
+    background-color: rgb(var(--dark-c));
+    color: rgb(var(--light-c));
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
 }
 .navbar-title {
     font-size: 25pt;
     font-family: "Architects Daughter", cursive;
-    color: rgb(var(--quin-c)) !important;
-    text-shadow: .5px .5px .5px rgba(var(--sec-c), .75);
+    color: rgb(var(--sec-c)) !important;
+    text-shadow: .5px .5px .5px rgba(var(--quin-c), .75);
+}
+.container-fluid{
+    padding: 0 2rem;
 }
 .navbar-box {
     display: grid;
@@ -18,9 +24,10 @@ nav {
     background-color: rgba(var(--quat-c), 0.4);
 }
 .dropdown-menu {
-    margin-top: 7.5px !important;
+    margin-top: -15px !important;
     width: 100%;
     background-color: rgb(var(--quin-c)) !important;
+    color: rgb(var(--light-c));
 }
 .dropdown-item {
     text-align: center !important;

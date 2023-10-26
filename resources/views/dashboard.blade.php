@@ -10,11 +10,8 @@
         <img src="/img/search.png" alt="search" class="img-search">
     @endif
 
-    {{-- <section class="d-flex justify-content-center m-2">
-    </section> --}}
-
     <!-- Button trigger modal -->
-    <button type="button" class="btnG btnG-green p-0" data-bs-toggle="modal" data-bs-target="#newList" id="modalList">
+    <button type="button" class="btnG btnG-green p-0 ms-5" data-bs-toggle="modal" data-bs-target="#newList" id="modalList">
         <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="currentColor" class="bi bi-plus"
             viewBox="0 0 16 16">
             <path
@@ -34,7 +31,7 @@
                         <legend class="text-center"> To-do List </legend>
                         <div>
                             <label for="name" class="form-label"> name </label>
-                            <textarea name="name" id="name" cols="58" rows="1" class="form-control" maxlength="80"></textarea>
+                            <textarea name="name" id="name" cols="58" rows="1" class="form-control" maxlength="80" ></textarea>
                         </div>
                         <div class="my-1">
                             <label for="createDate" class="form-label"> list date </label>
@@ -66,12 +63,13 @@
 
     {{-- @if($c->listDate ) --}}
         <div class="checklist-card">
-            <a href="{{ route('task.create', ['id' => $c->id]) }}" class="text-white d-block w-100">
+            <a href="{{ route('task.view', ['id' => $c->id]) }}" class="text-white d-block w-100">
                 <span class="d-inline listDate" style="font-size: 8pt; color: rgb(var(--quat-c));">
                     {{ date('d-m-Y', strtotime($c->listDate)) }}
                 </span>
                 <h5>
-                    {{ $c->name }}
+                    {{ $c->name }} 
+                    <span class="checklist-date">({{ date('d/m/Y', strtotime($c->listDate))}})</span>
                 </h5>
             </a>
             <div class="actions">

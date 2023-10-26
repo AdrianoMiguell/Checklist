@@ -40,6 +40,26 @@ body{
     min-height: 100vh;
 }
 
+.alert-remove{
+    opacity: 0;
+    visibility: hidden;
+    animation: alertRemove 1s linear;
+}
+
+@keyframes alertRemove {
+    0%{
+        visibility: visible;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        visibility: visible;
+        opacity: 0;
+    }
+}
+
 footer{
     margin-top: 5rem !important;
 }
@@ -48,11 +68,4 @@ footer{
     bottom: 0;
     left: 10%;
     right: 10%;
-}
-
-.datePassed{
-    background-color: rgba(255, 94, 108, 0.25) !important;
-}
-.datePassed .listDate{
-    color: rgb(255, 145, 154) !important;
 }

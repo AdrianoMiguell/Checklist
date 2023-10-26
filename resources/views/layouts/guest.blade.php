@@ -49,11 +49,9 @@
         </main>
     @endif
 
-    @hasSection('welcome')
-        <footer class="d-flex justify-content-center align-items-center m-0">
-            Made with ❤️
-        </footer>
-    @endif
+    {{-- @hasSection('welcome')
+        <script src="/js/changeImages.js"></script>
+    @endif --}}
 </body>
 
 </html>
