@@ -25,7 +25,7 @@
             <div class="modal-content">
                 <div class="modal-body p-0">
                     <form action="{{ Route('checklist.create') }}"
-                        class="newChecklist d-flex flex-column justify-content-around align-items-start p-2 px-4 w-100 gap-2"
+                        class="formChecklist d-flex flex-column justify-content-around align-items-start p-2 px-4 w-100 gap-2"
                         method="POST">
                         @csrf
                         <legend class="text-center"> To-do List </legend>
@@ -104,7 +104,7 @@
                         <div class="modal-content">
                             <div class="modal-body p-0">
                                 <form action="{{ route('checklist.edit') }}"
-                                    class="newChecklist d-flex flex-column justify-content-around align-items-start gap-2 p-2 px-4 w-100"
+                                    class="formChecklist d-flex flex-column justify-content-around align-items-start gap-2 p-2 px-4 w-100"
                                     method="POST">
                                     @csrf
                                     @method('PUT')

@@ -4,9 +4,6 @@
 
 @section('welcome')
     <style>
-        body {
-            background-color: rgb(var(--dark-c));
-        }
 
         .sectionInit {
             padding: 1rem 2rem;

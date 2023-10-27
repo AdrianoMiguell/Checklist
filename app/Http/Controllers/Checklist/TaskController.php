@@ -85,6 +85,10 @@ class TaskController extends Controller
     public function task_import(Request $request)
     {
 
+        $request->validate([
+            '*description' => 'required|string'
+        ]);
+
         $id = $request['checklist_id'];
 
         $listTasks = explode("\n", $request['description']);
@@ -92,14 +96,12 @@ class TaskController extends Controller
         $request['conclusion'] = false;
 
         foreach ($listTasks as $task) {
-            if (empty(trim($task)) == true) {
+            if (!empty(trim($task))) {
                 print(trim($task));
                 $request['description'] = trim($task);
                 print(" \t Description: " . trim($task));
                 $taskToCreate = $request->except('token');
                 Task::create($taskToCreate);
-            } else {
-                print_r("Vazio" . $task);
             }
         }
 

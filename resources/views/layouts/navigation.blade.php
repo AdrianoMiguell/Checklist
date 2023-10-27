@@ -43,10 +43,10 @@
                         </div>
                     @else
                         <div class="d-flex">
-                            <a href="{{ route('login') }}" class="btnG btnG-green">Log
+                            <a href="{{ route('login') }}" class="btnG btnG-light-green">Log
                                 in</a>
                             @if (Route::has('register'))
-                                <a href="{{ route('register') }}" class="btnG btnG-dark-green">Register</a>
+                                <a href="{{ route('register') }}" class="btnG btnG-light-green">Register</a>
                             @endif
                         </div>
                     @endauth
