@@ -12,6 +12,7 @@ class Checklist extends Model
     protected $fillable = [
        'name',
        'listDate',
+       'type',
        'user_id'
     ];
 }

@@ -27,6 +27,9 @@ class ChecklistController extends Controller
         );
 
         $checklist = $request->except('token');
+
+        // dd($checklist);
+
         $checklist['user_id'] = Auth::user()->id;
         $checklist = Checklist::create($checklist);
 
@@ -89,6 +92,7 @@ class ChecklistController extends Controller
         $all_checklists = Checklist::all();
         $tasks = Task::where('checklist_id', $request->id)
             ->orderBy('conclusion', 'asc')
+            ->orderBy('time_task', 'asc')
             ->get();
 
         return view('checklist', compact('all_checklists', 'checklist', 'tasks'));

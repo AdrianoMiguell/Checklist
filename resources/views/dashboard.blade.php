@@ -19,8 +19,9 @@
         </svg>
     </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="newList" tabindex="-1" aria-labelledby="newListLabel" aria-hidden="true">
+    <!-- Create New TO-DO List -->
+    <div class="modal fade" id="newList" tabindex="-1" aria-labelledby="newListLabel" aria-hidden="true"
+        style="--bs-modal-width: 400px;">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body p-0">
@@ -30,12 +31,22 @@
                         @csrf
                         <legend class="text-center"> To-do List </legend>
                         <div>
-                            <label for="name" class="form-label"> name </label>
-                            <textarea name="name" id="name" cols="58" rows="1" class="form-control" maxlength="80" ></textarea>
+                            <label for="name" class="form-label"> Name </label>
+                            <textarea name="name" id="name" cols="50" rows="1" class="form-control" maxlength="80"></textarea>
                         </div>
-                        <div class="my-1">
-                            <label for="createDate" class="form-label"> list date </label>
-                            <input type="date" name="listDate" id="createDate" class="date form-control" >
+                        <div class="my-1 d-flex justify-content-between align-items-center w-100 gap-5">
+                            <div class="my-1">
+                                <label for="createDate" class="form-label"> Date </label>
+                                <input type="date" name="listDate" id="createDate" class="date form-control">
+                            </div>
+                            <div class="my-1 d-grid">
+                                <label for="type" class="form-label"> Type </label>
+                                <select name="type" id="type" class="form-control">
+                                    <option value="standard">Standard</option>
+                                    <option value="event">event</option>
+                                    <option value="task">task</option>
+                                </select>
+                            </div>
                         </div>
 
                         <div class="w-100 d-flex justify-content-end my-2">
@@ -57,20 +68,35 @@
     </div>
 @endsection
 
+
 @section('dashboard')
 
-    @foreach ($checklist as $key => $c)
+    @if(!isset($checklist) || count($checklist) == 0)
+        <div class="mx-auto h-100 d-flex flex-column justify-content-center text-center gap-1">
+            <a
+                href="https://br.freepik.com/vetores-gratis/ilustracao-do-conceito-de-lista-de-verificacao-de-objetivos-pessoais_28766054.htm#query=tasks%20and%20checklist&position=20&from_view=search&track=ais">
+                <img src="./img/svg-checklist-for-dashboard.svg"
+                    alt="checklist for task list for the smooth running of appointments" class="img-dashboard-empty">
+            </a>
+            <span> No to-do list so far </span>
+        </div>
+    @endif
 
-    {{-- @if($c->listDate ) --}}
+
+    @foreach ($checklist as $key => $c)
+        {{-- @if ($c->listDate) --}}
         <div class="checklist-card">
             <a href="{{ route('task.view', ['id' => $c->id]) }}" class="text-white d-block w-100">
                 <span class="d-inline listDate" style="font-size: 8pt; color: rgb(var(--quat-c));">
                     {{ date('d-m-Y', strtotime($c->listDate)) }}
                 </span>
                 <h5>
-                    {{ $c->name }} 
-                    <span class="checklist-date">({{ date('d/m/Y', strtotime($c->listDate))}})</span>
+                    {{ $c->name }}
+                    <span class="checklist-date">({{ date('d/m/Y', strtotime($c->listDate)) }})</span>
                 </h5>
+                <span>
+                    {{ $c->type }}
+                </span>
             </a>
             <div class="actions">
                 <!-- Button trigger modal -->
@@ -83,7 +109,7 @@
                     </svg>
                 </button>
 
-                <form action="{{route('checklist.delete')}}" method="POST">
+                <form action="{{ route('checklist.delete') }}" method="POST">
                     @csrf
                     @method('DELETE')
                     <input type="hidden" name="id" value="{{ $c->id }}">
@@ -97,9 +123,10 @@
                 </form>
 
 
-                <!-- Modal -->
+                <!-- Edit New TO-DO List -->
                 <div class="modal fade" id="editList{{ $key }}" tabindex="-1"
-                    aria-labelledby="editList{{ $key }}Label" aria-hidden="true">
+                    aria-labelledby="editList{{ $key }}Label" aria-hidden="true"
+                    style="--bs-modal-width: 400px;">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-body p-0">
@@ -113,12 +140,32 @@
                                         <label for="name" class="form-label"> name </label>
                                         <textarea name="name" id="name" cols="58" rows="1" class="form-control">{{ $c->name }}</textarea>
                                     </div>
-                                    <div class="my-1">
+                                    <div class="my-1 d-flex justify-content-between align-items-center w-100 gap-5">
+                                        <div class="my-1">
+                                            <label for="createDate" class="form-label"> Date </label>
+                                            <input type="date" name="listDate" id="createDate"
+                                                class="date form-control" value="{{ $c->listDate }}">
+                                        </div>
+                                        <div class="my-1 d-grid">
+                                            <label for="type" class="form-label"> Type </label>
+                                            <select name="type" id="type" class="form-control">
+                                                @php
+                                                    $types = ['standard', 'event', 'task'];
+                                                @endphp
+                                                @foreach ($types as $t)
+                                                    <option value="{{ $t }}"
+                                                        @if ($t == $c->type) @selected(true) @endif>
+                                                        {{ $t }} </option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    </div>
+                                    {{-- <div class="my-1">
                                         <label for="putDate" class="form-label"> list date </label>
                                         <input type="date" name="listDate" id="putDdate" class="form-control date"
                                             value="{{ $c->listDate }}">
                                     </div>
-                                    <input type="hidden" name="id" value="{{ $c->id }}">
+                                    <input type="hidden" name="id" value="{{ $c->id }}"> --}}
 
                                     <div class="w-100 d-flex justify-content-end mt-1 my-2">
                                         <button class="btnG btnG-light-green d-flex align-items-center gap-2"

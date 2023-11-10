@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 150);
             $table->date('listDate');
+            $table->enum('type', ['standard', 'event', 'task'])->default('standard');
             $table->foreignId('user_id')
                 ->constrained()
                 ->onUpdate('cascade')

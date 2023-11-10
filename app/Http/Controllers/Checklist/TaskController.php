@@ -75,6 +75,7 @@ class TaskController extends Controller
             ]
         );
 
+
         $task = Task::findOrFail($request->id);
         $task->delete();
         $id = $request->checklist_id;

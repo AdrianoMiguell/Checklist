@@ -91,6 +91,10 @@ nav{
     justify-content: space-between;
 }
 
+.img-dashboard-empty{
+    width: 225px;
+}
+
 .datePassed{
     order: 3;
     background-color: rgba(255, 94, 108, 0.2) !important;

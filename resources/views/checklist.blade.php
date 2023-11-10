@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('dashboard')
-    <div class="text-start w-100 m-5">
+    <div class="text-start w-100 mx-5 my-2">
 
         <div class="d-flex align-items-center justify-content-between" style="margin: 0 .75rem">
             <h3> <i class="bi bi-card-checklist"></i> {{ $checklist->name }} </h3>
@@ -55,8 +55,8 @@
             </div>
         </div>
 
-        <div class="checklist-task">
-            @if (isset($tasks) && count($tasks) > 0)
+        @if (isset($tasks) && count($tasks) > 0)
+            <div class="checklist-task">
                 @foreach ($tasks as $key => $t)
                     <div class="d-flex justify-content-between px-4 rounded-1">
                         <form action="{{ route('task.status') }}" method="POST"
@@ -67,10 +67,10 @@
                                 @if ($t->conclusion == true) @checked(true)
                                 @class(['task-checked' => true]) @endif>
                             <label for="status{{ $key }}" class="d-block w-100" style="cursor: pointer;">
-                                {{ $t->description }}
-                                {{-- @if ($t->conclusion == true)
-                                    Escolhido
-                                @endif --}}
+                                <div class="d-grid text-start">
+                                    <span>{{ $t->description }}</span>
+                                    <span style="font-size: 7pt;"> {{ $t->time_task }} </span>
+                                </div>
                             </label>
                             <input type="hidden" name="id" value="{{ $checklist->id }}">
                             <input type="hidden" name="task_id" value="{{ $t->id }}">
@@ -81,7 +81,6 @@
                                 <button type="button" class="btnG btnG-light-green p-1"style="width: 30px; height: 30px;"
                                     data-bs-toggle="modal" data-bs-target="#editTask{{ $key }}">
                                     <i class="bi bi-pencil-square"></i>
-
                                 </button>
 
                                 <form action="{{ route('task.delete') }}" method="POST">
@@ -92,20 +91,21 @@
 
                                     <!-- Button trigger modal -->
                                     <button type="button" class="btnG btnG-light-green p-1" data-bs-toggle="modal"
-                                        data-bs-target="#confEditModal" style="width: 30px; height: 30px;">
+                                        data-bs-target="#confDeleteModal{{ $key }}"
+                                        style="width: 30px; height: 30px;">
                                         <i class="bi bi-trash" style="font-size: 12pt;"></i>
                                     </button>
 
                                     <!-- Modal to confirm action of delete this tasks -->
-                                    <div class="modal fade" id="confEditModal" tabindex="-1"
-                                        aria-labelledby="confEditModalLabel" aria-hidden="true">
+                                    <div class="modal fade" id="confDeleteModal{{ $key }}" tabindex="-1"
+                                        aria-labelledby="confDeleteModalLabel{{ $key }}" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
                                                 <div class="modal-body p-0">
                                                     <div
                                                         class="formChecklist d-flex justify-content-around w-100 py-3 rounded-1">
                                                         <span>
-                                                            Are you sure to delete this task?
+                                                            Are you sure to delete this task ?  
                                                             <button type="submit" class="btnG btnG-green p-1">
                                                                 Click here
                                                             </button>
@@ -176,12 +176,19 @@
                         </div>
                     </div>
                 @endforeach
-            @else
-                <span class="text-white text-center" style="margin-top: 5rem;"> No task found </span>
-            @endif
-        </div>
-
+            </div>
+        @else
+            <div class="mx-auto h-100 d-flex flex-column justify-content-center text-center gap-1">
+                <a
+                    href="https://br.freepik.com/vetores-gratis/ilustracao-do-conceito-de-lista-de-verificacao-de-objetivos-pessoais_28766054.htm#query=tasks%20and%20checklist&position=20&from_view=search&track=ais">
+                    <img src="./img/svg-checklist-for-dashboard.svg"
+                        alt="checklist for task list for the smooth running of appointments" class="img-dashboard-empty">
+                </a>
+                <span> No tasks so far </span>
+            </div>
+        @endif
     </div>
+
 
     <!-- Modal for Create New Task -->
     <div class="modal fade" id="newTask" tabindex="-1" aria-labelledby="newTaskLabel" aria-hidden="true">
@@ -199,6 +206,13 @@
                             </label>
                             <textarea type="text" name="description" id="create_description" class="form-control" maxlength="245"> </textarea>
                             <input type="hidden" name="checklist_id" value="{{ $checklist->id }}">
+                        </div>
+
+                        <div class="mx-3 w-100 mt-3">
+                            <label for="create_time_task" class="form-label"> <i class="bi bi-card-text"></i>
+                                Task time
+                            </label>
+                            <input type="time" name="time_task" id="create_time_task" class="form-control" />
                         </div>
 
                         <div class="w-100 d-flex justify-content-end my-4">
@@ -238,8 +252,14 @@
                         <div class="mt-2 mx-3 w-100">
                             <label for="import_description" class="form-label"> <i class="bi bi-card-text"></i> Tasks
                             </label>
-                            <textarea type="text" name="description" id="import_description" class="form-control" rows="16"> </textarea>
+                            <textarea type="text" name="description" id="import_description" class="form-control" rows="12"> </textarea>
                             <input type="hidden" name="checklist_id" value="{{ $checklist->id }}">
+                        </div>
+                        <div class="mx-3 w-100 mt-3">
+                            <label for="create_time_task" class="form-label"> <i class="bi bi-card-text"></i>
+                                Task time
+                            </label>
+                            <input type="time" name="time_task" id="create_time_task" class="form-control" />
                         </div>
 
 

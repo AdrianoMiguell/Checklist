@@ -1,35 +1,76 @@
 nav {
     background-color: rgba(var(--quin-c), 0.1);
-    color: rgb(var(--light-c));
     padding-left: 1.5rem;
     padding-right: 1.5rem;
 }
 nav a {
     color: rgb(var(--light-c));
-    text-shadow: 0 0 .5px rgb(var(--sec-c));
+    text-shadow: 0 0 0.5px rgb(var(--sec-c));
 }
+
 .navbar-title {
     font-size: 25pt;
     font-family: "Architects Daughter", cursive;
     color: rgb(var(--sec-c)) !important;
     text-shadow: 0.5px 0.5px 0.5px rgba(var(--quin-c), 0.75);
 }
-.container-fluid {
-    padding: 0 2rem;
+
+.navbar {
+    background-color: rgb(var(--light-color));
+    justify-content: space-around;
+    flex-wrap: wrap;
+    align-items: center;
+    padding: 1em 2.5em;
 }
-.navbar-box {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+.navbar-brand {
+    color: rgb(var(--sec-color));
+    font-weight: 600;
+    font-size: 24pt;
+    font-family: "Courgette", cursive;
 }
-.navbar-box > div {
-    text-align: center;
+.navbar-nav {
+    margin: 0;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75em;
 }
-.navbar-box > div:hover:not(:nth-child(1)) {
-    background-color: rgba(var(--quat-c), 0.4);
+.navbar-nav *:not(.dropdown-menu *) {
+    color: rgb(var(--main-color)) !important;
 }
+.navbar-nav *:hover,
+.navbar-nav *:active,
+.navbar-nav *:focus {
+    color: rgb(var(--sec-color)) !important;
+}
+
+.navbar-toggler {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.navbar-toggler:not(hover) {
+    box-shadow: none !important;
+    border: none !important;
+    color: rgb(var(--main-color));
+    transition: 0.25s;
+}
+.navbar-toggler:active,
+.navbar-toggler:hover {
+    color: rgb(var(--sec-color));
+    transition: 0.25s;
+}
+.navbar-toggler i {
+    position: absolute;
+    transition: 0.25s;
+}
+.activedCollapse {
+    color: rgb(var(--sec-color));
+    transition: 0.25s;
+}
+
 .dropdown-menu {
-    margin-top: -15px !important;
-    width: 100%;
+    position: absolute !important;
+    top: 90% !important;
     background-color: rgb(var(--quin-c)) !important;
     color: rgb(var(--light-c));
 }
@@ -45,20 +86,22 @@ nav a {
 }
 .dropdown-item a:hover {
     color: rgb(var(--tert-c));
-}
-/* .dropdown-menu {
-    background-color: rgb(var(--quin-c)) !important;
-} */
+} 
 
-/* 
-@media screen and (max-width: 768px) {
-    .navbar-box{
-        
+.block {
+    animation: block-icon 0.5s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+}
+
+@keyframes block-icon {
+    0% {
+        opacity: 1;
+    }
+    75% {
+        opacity: 0;
+    }
+    100% {
+        visibility: hidden;
     }
 }
-@media screen and (min-width: 768px) {
-    .navbar-box{
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-    }
-} */

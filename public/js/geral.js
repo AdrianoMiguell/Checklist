@@ -2,6 +2,8 @@ const footer = document.querySelector("footer");
 const inputDate = document.querySelectorAll(".date");
 const listDate = document.querySelectorAll(".listDate");
 
+import("./navbar.js");
+
 if (inputDate != undefined) {
     const date = new Date();
     let day = date.getDate();
