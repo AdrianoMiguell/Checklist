@@ -47,7 +47,7 @@ Aqui estão duas dessas formas:
 
 -- Encontre esse trecho do código ``` DB_DATABASE ```  e troque o nome do banco, pelo nome do banco de dados que você acabou de criar. 
 
-<img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/copiar-colar-.env-e-renomear-DB_DATABASE.png" width="600" alt="criando o database" />
+<img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/checklist-copiar-colar-.env-e-renomear-DB_DATABASE.png" width="600" alt="criando o database" />
 
 -- Vá ao terminal e digite este código para que as tabelas do banco sejam construidas altomaticamente:  ``` php artisan migrate ``` .  
 As seguintes tabelas devem aparecer no banco de dados.
