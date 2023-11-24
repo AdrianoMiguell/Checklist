@@ -1,20 +1,25 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Inter&Architects+Daughter&display=swap");
 
+:root {
+    --tam-new-list: 30px;
+    --tam-new-list-hover: 85px;
+}
+
 body {
     background-color: rgb(var(--dark-c)) !important;
     color: white !important;
     overflow-x: hidden !important;
 }
 
-nav{
-    background-color: rgba(var(--light-c), .1);
+nav {
+    background-color: rgba(var(--light-c), 0.1);
 }
 
 .navbar-title {
     font-size: 25pt;
     font-family: "Architects Daughter", cursive;
     color: rgb(var(--sec-c)) !important;
-    text-shadow: .5px .5px .5px rgba(var(--quin-c), .75) !important;
+    text-shadow: 0.5px 0.5px 0.5px rgba(var(--quin-c), 0.75) !important;
 }
 
 .img-search {
@@ -26,9 +31,23 @@ nav{
 }
 
 #modalList {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
+    overflow: hidden;
+    padding: 2.5px 6px;
+    border-radius: 50%;
+    transition: 0.5s;
+    width: var(--tam-new-list);
+    height: var(--tam-new-list);
+}
+#modalList span {
+    opacity: 0;
+    transition-duration: .5s;
+}
+#modalList:hover {
+    border-radius: var(--tam-new-list);
+    width: var(--tam-new-list-hover);
+}
+#modalList:hover > span {
+    opacity: 1;
 }
 
 .formChecklist {
@@ -55,17 +74,17 @@ nav{
     align-items: center;
     color: aliceblue;
     width: 30em;
-    background-color: rgba(var(--light-c), .1);
+    background-color: rgba(var(--light-c), 0.1);
     margin: 1em 0 1em 3em;
     padding: 0.5em 1em;
-    transition: .25s linear;
+    transition: 0.25s linear;
 }
-.checklist-card:hover{
-    box-shadow: 0 0 1px 1px rgba(var(--light-c), .5);
-} 
+.checklist-card:hover {
+    box-shadow: 0 0 1px 1px rgba(var(--light-c), 0.5);
+}
 .checklist-card .checklist-date {
     font-size: small;
-    color: rgba(var(--light-c), .85);
+    color: rgba(var(--light-c), 0.85);
 }
 
 .checklist-task {
@@ -76,8 +95,8 @@ nav{
     padding: 0.75em;
 }
 .checklist-task > div {
-    background-color: rgba(var(--light-c), .1);
-    border: 1px solid rgba(var(--light-c), .1);
+    background-color: rgba(var(--light-c), 0.1);
+    border: 1px solid rgba(var(--light-c), 0.1);
 }
 
 .task-checked ~ label {
@@ -91,18 +110,18 @@ nav{
     justify-content: space-between;
 }
 
-.img-dashboard-empty{
+.img-dashboard-empty {
     width: 225px;
 }
 
-.datePassed{
+.datePassed {
     order: 3;
     background-color: rgba(255, 94, 108, 0.2) !important;
 }
-.datePassed:hover{
+.datePassed:hover {
     box-shadow: 0 0 1px 1px rgb(255, 94, 108);
 }
-.datePassed .listDate{
+.datePassed .listDate {
     color: rgb(255, 145, 154) !important;
 }
 .dateAgo {
@@ -112,6 +131,6 @@ nav{
 .dateAgo:hover {
     box-shadow: 0 0 1px 1px rgb(255, 233, 159);
 }
-.dateAgo .listDate{
+.dateAgo .listDate {
     color: rgb(255, 233, 159) !important;
 }

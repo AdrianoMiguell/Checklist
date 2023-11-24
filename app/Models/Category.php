@@ -5,18 +5,17 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Checklist extends Model
+class Category extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-       'name',
-       'listDate',
-       'category_id',
-       'user_id'
+        'name',
+        'icon',
     ];
 
-    public function category() {
-        return $this->belongsTo(Category::class);
+    public function checklist()
+    {
+        return $this->hasMany(Checklist::class);
     }
 }

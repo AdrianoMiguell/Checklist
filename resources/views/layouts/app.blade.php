@@ -71,6 +71,7 @@
 
     <script src="./js/geral.js"></script>
     <script src="./js/alert.js"></script>
+    <script src="./js/select_category.js"></script>
 
 </body>
 

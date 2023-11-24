@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Checklist;
 
 use App\Http\Controllers\Controller;
+use App\Models\Category;
 use App\Models\Checklist;
 use App\Models\Task;
 use Illuminate\Http\Request;
@@ -18,7 +19,8 @@ class ChecklistController extends Controller
         $request->validate(
             [
                 'name' => 'required|string|max:1000',
-                'listDate' => 'required|date'
+                'listDate' => 'required|date',
+                'category_id' => 'required'
             ],
             [
                 'name' => ['required' => 'The name field is required. ', 'string|max:1000' => 'Shorten the name field further. '],
@@ -41,7 +43,8 @@ class ChecklistController extends Controller
         $request->validate(
             [
                 'name' => 'required|string|max:80',
-                'listDate' => 'required|after:date'
+                'listDate' => 'required|after:date',
+                'category_id' => 'required'
             ],
             [
                 'after:date' => 'Data invalida'
@@ -83,7 +86,8 @@ class ChecklistController extends Controller
         $checklist = Checklist::Where('user_id', Auth::user()->id)
             ->orderBy('listDate', 'desc')
             ->get();
-        return view('dashboard', compact('checklist'));
+        $category = Category::all();
+        return view('dashboard', compact('checklist', 'category'));
     }
 
     public function view_task(Request $request)
