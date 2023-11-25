@@ -36,7 +36,7 @@ Route::middleware('auth')->group(function () {
         Route::delete('/task_delete', 'task_delete')->name('task.delete');
         Route::delete('/task_delete_all', 'task_delete_all')->name('task.delete_all');
         Route::post('/task_status', 'task_status')->name('task.status');
-        Route::post('/task_import', 'task_import')->name('task.import');
+        Route::post('/create_many_tasks', 'create_many_tasks')->name('task.createManyTasks');
     });
 
     Route::controller(ChecklistController::class)->group(function () {

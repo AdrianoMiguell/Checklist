@@ -14,7 +14,6 @@
 
 @endsection
 
-
 @section('dashboard')
 
     @if (!isset($checklist) || count($checklist) == 0)

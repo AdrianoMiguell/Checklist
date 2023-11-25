@@ -83,7 +83,7 @@ class TaskController extends Controller
         return redirect()->route('task.view', ['id' => $id])->with('status', 'Task deleted');
     }
 
-    public function task_import(Request $request)
+    public function create_many_tasks(Request $request)
     {
 
         $request->validate([
