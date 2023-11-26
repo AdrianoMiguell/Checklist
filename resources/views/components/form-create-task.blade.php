@@ -1,11 +1,7 @@
 <!-- Button trigger modal -->
-<button type="button" class="btnG btnG-green rounded-circle p-1" data-bs-toggle="modal" data-bs-target="#newTask"
+<button type="button" class="btnG btnG-green rounded-circle p-1 px-2" data-bs-toggle="modal" data-bs-target="#newTask"
     id="modaList">
-    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-plus"
-        viewBox="0 0 16 16">
-        <path
-            d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
-    </svg>
+    <i class="bi bi-plus" style="font-size: 15pt;"></i>
 </button>
 
 <!-- Modal for Create New Task -->
@@ -27,10 +23,23 @@
                     </div>
 
                     <div class="mx-3 w-100 mt-3">
-                        <label for="create_time_task" class="form-label"> <i class="bi bi-card-text"></i>
+                        <label class="form-label"> <i class="bi bi-clock-fill"></i>
                             Task time
                         </label>
-                        <input type="time" name="time_task" id="create_time_task" class="form-control" />
+                        <div class="w-100 d-flex justify-content-between gap-1">
+                            <div class="w-50">
+                                <label for="create_start_time" class="form-label"> <i class="bi bi-hourglass-top"></i>
+                                    Start
+                                </label>
+                                <input type="time" name="start_time" id="create_start_time" class="form-control" />
+                            </div>
+                            <div class="w-50">
+                                <label for="create_end_time" class="form-label"> <i class="bi bi-hourglass-bottom"></i>
+                                    End
+                                </label>
+                                <input type="time" name="end_time" id="create_end_time" class="form-control" />
+                            </div>
+                        </div>
                     </div>
 
                     <div class="w-100 d-flex justify-content-end my-4">

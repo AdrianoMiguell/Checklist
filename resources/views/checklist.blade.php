@@ -29,7 +29,11 @@
                             <label for="status{{ $key }}" class="d-block w-100" style="cursor: pointer;">
                                 <div class="d-grid text-start">
                                     <span>{{ $t->description }}</span>
-                                    <span style="font-size: 7pt;"> {{ $t->time_task }} </span>
+                                    <span style="font-size: 7pt;">
+                                        {{ date('H:i', strtotime($t->start_time)) }}
+                                        -
+                                        {{ date('H:i', strtotime($t->end_time)) }}
+                                    </span>
                                 </div>
                             </label>
                             <input type="hidden" name="id" value="{{ $checklist->id }}">

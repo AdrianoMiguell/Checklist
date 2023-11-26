@@ -96,7 +96,7 @@ class ChecklistController extends Controller
         $all_checklists = Checklist::all();
         $tasks = Task::where('checklist_id', $request->id)
             ->orderBy('conclusion', 'asc')
-            ->orderBy('time_task', 'asc')
+            ->orderBy('start_time', 'asc')
             ->get();
 
         return view('checklist', compact('all_checklists', 'checklist', 'tasks'));

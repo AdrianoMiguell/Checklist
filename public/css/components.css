@@ -6,6 +6,7 @@
 }
 .btnG-green {
     background-color: rgb(var(--sec-c));
+    color: rgb(var(--dark-c));
     box-shadow: 0px 0px 5px rgb(var(--quin-c));
 }
 .btnG-dark-green {

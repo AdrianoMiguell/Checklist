@@ -25,36 +25,42 @@
             </a>
             <span> No to-do list so far </span>
         </div>
-        @else
-        
-            @foreach ($checklist as $key => $c)
-                {{-- @if ($c->listDate) --}}
-                <div class="checklist-card">
-                    <a href="{{ route('task.view', ['id' => $c->id]) }}" class="text-white d-block w-100">
-                        <span class="d-inline listDate" style="font-size: 8pt; color: rgb(var(--quat-c));">
-                            <span>{{ date('d-m-Y', strtotime($c->listDate)) }}</span>
-                        </span>
-                        <h5>
-                            {{ $c->name }}
-                            <span class="checklist-date">({{ date('d/m/Y', strtotime($c->listDate)) }})</span>
-                        </h5>
-                        <div class="d-flex align-items-center listDate gap-1 text-cappitalize"
-                            style="font-size: 8pt; color: rgb(var(--tert-c)) !important;">
-                            <img src="{{ $c->category->icon }}" alt="{{ $c->category->name }}" height="16pt">
-                            <span>{{ $c->category->name }}</span>
-                        </div>
-                    </a>
-                    <div class="actions">
-                        
-                        @include('components.modal-edit-checklist')
+    @else
+        @foreach ($checklist as $key => $c)
+            {{-- @if ($c->listDate) --}}
+            <div class="checklist-card">
+                <a href="{{ route('task.view', ['id' => $c->id]) }}" class="text-white d-block w-100">
+                    <span class="d-inline listDate" style="font-size: 8pt; color: rgb(var(--quat-c));">
+                        <span>{{ date('d-m-Y', strtotime($c->listDate)) }}</span>
+                    </span>
+                    <h5>
+                        {{ $c->name }}
+                        <span class="checklist-date">({{ date('d/m/Y', strtotime($c->listDate)) }})</span>
+                    </h5>
+                    <div class="d-flex align-items-center listDate gap-1 text-cappitalize"
+                        style="font-size: 8pt; color: rgb(var(--tert-c)) !important;">
 
-                        @include('components.form-delete-checklist')
-                        
+                        @if (file_exists(public_path($c->category->icon)))
+                            <!-- Se a imagem existe, exiba-a -->
+                            <img src="{{ $c->category->icon }}" alt="{{ $c->category->name }}" height="16pt">
+                        @else
+                            <!-- Se a imagem não existe, exiba uma mensagem ou um placeholder -->
+                            <img src="{{ asset('storage/' . $c->category->icon) }}" alt="{{ $c->category->name }}"
+                                height="16pt">
+                        @endif
+                        <span>{{ $c->category->name }}</span>
                     </div>
+                </a>
+                <div class="actions">
+
+                    @include('components.modal-edit-checklist')
+
+                    @include('components.form-delete-checklist')
+
                 </div>
-            @endforeach
-        
+            </div>
+        @endforeach
+
     @endif
 
 @endsection
-

@@ -3,8 +3,8 @@
         @csrf
         @method('DELETE')
         <input type="hidden" name="checklist_id" value="{{ $checklist->id }}">
-        <button type="submit" class="btnG btnG-green rounded-circle"
-            onclick="return confirm('Tem certeza que deseja enviar o formulário?')"><i class="bi bi-trash"
-                style="font-size: 16pt;"></i></button>
+        <button type="submit" class="btnG btnG-green rounded-circle p-1 px-2" 
+            onclick="return confirm('Tem certeza que deseja apagar todas as tarefas?')"><i class="bi bi-trash"
+                style="font-size: 15pt;"></i></button>
     </form>
 @endif

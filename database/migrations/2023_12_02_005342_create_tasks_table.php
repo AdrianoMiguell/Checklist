@@ -15,7 +15,8 @@ return new class extends Migration
         Schema::create('tasks', function (Blueprint $table) {
             $table->id();
             $table->string('description', 250);
-            $table->time('time_task', $precision = 0)->default('000000');
+            $table->time('start_time', $precision = 0)->default('000000');
+            $table->time('end_time', $precision = 0)->default('235959');
             $table->boolean('conclusion');
             $table->foreignId('checklist_id')
                 ->constrained()

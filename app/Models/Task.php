@@ -12,7 +12,9 @@ class Task extends Model
     protected $fillable = [
         'description',
         'conclusion',
-        'time_task',
+        'start_time',
+        'end_time',
+        // 'time_task',
         'checklist_id'
     ];
 }
