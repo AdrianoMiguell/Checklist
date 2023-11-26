@@ -9,6 +9,9 @@
                     method="POST" enctype="multipart/form-data">
                     @csrf
                     <legend class="text-center"> Category </legend>
+                    <button type="button" class="btn-close position-absolute top-0 mt-2 end-0 mx-2"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
                     <div>
                         <label for="name" class="form-label"> Name </label>
                         <input name="name" id="name" class="form-control" />

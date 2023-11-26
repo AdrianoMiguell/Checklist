@@ -1,7 +1,29 @@
+:root {
+    --tam-new-list: 30px;
+    --tam-new-list-hover: 85px;
+}
+
+@media screen and (max-width: 768px) {
+    .btnG {
+        padding: 2.5px 5px !important;
+        margin: 0.2rem;
+        font-size: 10pt;
+    }
+}
+@media screen and (min-width: 768px) {
+    .btnG-growing-anim:hover {
+        border-radius: var(--tam-new-list);
+        width: var(--tam-new-list-hover);
+    }
+    .btnG-growing-anim:hover > span {
+        opacity: 1;
+    }
+}
+
 .btnG {
     border-radius: 5px;
     padding: 5px 10px;
-    margin: .5em;
+    margin: 0.5em;
     border: none !important;
 }
 .btnG-green {
@@ -24,4 +46,18 @@
 .btnG-light-green:hover,
 .btnG-light-green:active {
     background-color: rgba(var(--tert-c), 0.8);
+}
+
+.btnG-growing-anim {
+    position: relative;
+    overflow: hidden;
+    padding: 2.5px 6px;
+    border-radius: 50%;
+    transition: 0.5s;
+    width: var(--tam-new-list);
+    height: var(--tam-new-list);
+}
+.btnG-growing-anim span {
+    opacity: 0;
+    transition-duration: 0.5s;
 }

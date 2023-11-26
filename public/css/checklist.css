@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Inter&Architects+Daughter&display=swap");
 
-:root {
-    --tam-new-list: 30px;
-    --tam-new-list-hover: 85px;
-}
+/* @media screen and (max-width: 768px) {
+    button[data-bs-toggle="modal"] {
+        font-size: 10pt;
+    }
+} */
 
 body {
     background-color: rgb(var(--dark-c)) !important;
@@ -30,27 +31,8 @@ nav {
     height: 250px;
 }
 
-#modalList {
-    overflow: hidden;
-    padding: 2.5px 6px;
-    border-radius: 50%;
-    transition: 0.5s;
-    width: var(--tam-new-list);
-    height: var(--tam-new-list);
-}
-#modalList span {
-    opacity: 0;
-    transition-duration: .5s;
-}
-#modalList:hover {
-    border-radius: var(--tam-new-list);
-    width: var(--tam-new-list-hover);
-}
-#modalList:hover > span {
-    opacity: 1;
-}
-
 .formChecklist {
+    position: relative;
     width: 250px;
     height: auto;
     background-color: rgb(var(--quin-c));
@@ -62,7 +44,7 @@ nav {
 
 .checklists {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
     gap: 0.5em;
 }

@@ -38,7 +38,7 @@ class CategoryController extends Controller
         if (Storage::exists($category['icon'])) {
             Storage::delete($category['icon']);
             $category['icon'] = $request->img_icon->store('img/category_images');
-        }
+        } 
 
         Category::findOrFail($category['id'])->update($category);
 

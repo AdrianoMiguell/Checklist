@@ -15,6 +15,9 @@
                     @csrf
                     @method('PUT')
                     <legend class="text-center"> Edit To-do List </legend>
+                    <button type="button" class="btn-close position-absolute top-0 mt-2 end-0 mx-2"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
                     <div>
                         <label for="edit_description" class="form-label"> Description
                         </label>
@@ -28,13 +31,15 @@
                             <label for="create_start_time" class="form-label"> <i class="bi bi-hourglass-top"></i>
                                 Start
                             </label>
-                            <input type="time" name="start_time" id="create_start_time" class="form-control" value="{{ $t->start_time }}" />
+                            <input type="time" name="start_time" id="create_start_time" class="form-control"
+                                value="{{ $t->start_time }}" />
                         </div>
                         <div class="w-50">
                             <label for="create_end_time" class="form-label"> <i class="bi bi-hourglass-bottom"></i>
                                 End
                             </label>
-                            <input type="time" name="end_time" id="create_end_time" class="form-control" value="{{ $t->end_time }}" />
+                            <input type="time" name="end_time" id="create_end_time" class="form-control"
+                                value="{{ $t->end_time }}" />
                         </div>
                     </div>
 

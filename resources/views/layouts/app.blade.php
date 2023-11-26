@@ -41,10 +41,10 @@
         @endif
 
         <!-- Page Content -->
-        <main>
-            <section class="m-1">
+        <main class="container">
+            <div class="m-1">
                 @yield('newList')
-            </section>
+            </div>
             <section class="m-1 checklists">
                 @yield('dashboard')
             </section>

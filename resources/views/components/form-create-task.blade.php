@@ -1,7 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btnG btnG-green rounded-circle p-1 px-2" data-bs-toggle="modal" data-bs-target="#newTask"
+<button type="button" class="btnG btnG-green d-flex align-items-center gap-1 btnG-growing-anim" data-bs-toggle="modal" data-bs-target="#newTask"
     id="modaList">
     <i class="bi bi-plus" style="font-size: 15pt;"></i>
+    <span class="btnG-text"> task </span>
 </button>
 
 <!-- Modal for Create New Task -->
@@ -14,6 +15,9 @@
                     method="POST">
                     @csrf
                     <legend class="text-center"> <i class="bi bi-card-checklist"></i> New Task </legend>
+                    <button type="button" class="btn-close position-absolute top-0 mt-2 end-0 mx-2"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
                     <div class="mx-3 w-100">
                         <label for="create_description" class="form-label"> <i class="bi bi-card-text"></i>
                             Description

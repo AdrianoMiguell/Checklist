@@ -1,6 +1,7 @@
-<button type="button" class="btnG btnG-green rounded-circle p-1 px-2" data-bs-toggle="modal"
+<button type="button" class="btnG btnG-green d-flex align-items-center gap-1 btnG-growing-anim" data-bs-toggle="modal"
     data-bs-target="#createManyTasks" id="modalCreateManyTasks">
     <i class="bi bi-plus-square-fill" style="font-size: 15pt;"></i>
+    <span class="btnG-text"> tasks </span>
 </button>
 
 <!-- Modal for Import New Tasks -->
@@ -13,7 +14,9 @@
                     method="POST">
                     @csrf
                     <legend class="text-center"> <i class="bi bi-file-earmark-arrow-down"></i>
-                        Importar Task </legend>
+                        Create Many Task </legend>
+                    <button type="button" class="btn-close position-absolute top-0 mt-2 end-0 mx-2"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
 
                     <label>
                         Create many tasks at once. Write each task on a new line.

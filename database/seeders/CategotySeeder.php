@@ -28,9 +28,8 @@ class CategotySeeder extends Seeder
             ],
             [
                 'name' => "syllabus",
-                'icon' => "icons8-syllabus-30.png",
+                'icon' => "/img/category_images/icons8-syllabus-30.png",
             ],
         ]);
     }
 }
-

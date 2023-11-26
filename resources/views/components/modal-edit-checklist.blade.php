@@ -19,6 +19,9 @@
                     @csrf
                     @method('PUT')
                     <legend class="text-center"> Edit To-do List </legend>
+                    <button type="button" class="btn-close position-absolute top-0 mt-2 end-0 mx-2"
+                        data-bs-dismiss="modal" aria-label="Close"></button>
+
                     <div>
                         <label for="name" class="form-label"> name </label>
                         <textarea name="name" id="name" cols="58" rows="1" class="form-control">{{ $c->name }}</textarea>

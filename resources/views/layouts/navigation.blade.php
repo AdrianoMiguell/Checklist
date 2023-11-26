@@ -20,13 +20,19 @@
                             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul class="navbar-nav">
                                     <li class="nav-item">
-                                        <a class="nav-link" href="#contato">Dicas de uso</a>
+                                        <a class="nav-link" href="#dicas">Dicas de uso</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#sobre">Sobre</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#contato">Contato</a>
                                     </li>
                                     <li class="nav-item dropdown position-relative">
-                                        <a class="nav-link " href="#" role="button" data-bs-toggle="dropdown"
-                                            aria-expanded="false">
+                                        <a class="nav-link text-truncate" href="#" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
                                             <i class="bi bi-person-fill"></i>
-                                            {{ Auth::user()->name }}
+                                            <span>{{ Auth::user()->name }}</span>
                                         </a>
                                         <ul class="dropdown-menu">
                                             <li>
@@ -46,9 +52,6 @@
                                                 </div>
                                             </li>
                                         </ul>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#sobre">Sobre</a>
                                     </li>
                                 </ul>
                             </div>

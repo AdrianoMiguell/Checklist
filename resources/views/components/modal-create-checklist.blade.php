@@ -1,8 +1,8 @@
 <!-- Button trigger modal -->
-<button type="button" class="btnG btnG-green ms-5 d-flex align-items-center gap-1" data-bs-toggle="modal"
+<button type="button" class="btnG btnG-green ms-5 d-flex align-items-center gap-1 btnG-growing-anim" data-bs-toggle="modal"
     data-bs-target="#newList" id="modalList">
     <i class="bi bi-plus fs-5"></i>
-    <span class="text-create-list" id="text-create-list"> create </span>
+    <span class="text-create-list btnG-text" id="text-create-list"> create </span>
 </button>
 
 <!-- Create New TO-DO List -->
@@ -16,6 +16,8 @@
                     method="POST">
                     @csrf
                     <legend class="text-center"> To-do List </legend>
+                    <button type="button" class="btn-close position-absolute top-0 mt-2 end-0 mx-2" data-bs-dismiss="modal" aria-label="Close"></button>
+
                     <div>
                         <label for="name" class="form-label"> Name </label>
                         <textarea name="name" id="name" cols="50" rows="1" class="form-control" maxlength="80"></textarea>
