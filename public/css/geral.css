@@ -61,6 +61,11 @@ body{
     }
 }
 
+a {
+    text-decoration: none !important;
+    color: rgb(var(--tert-c));
+}
+
 footer{
     margin-top: 5rem !important;
 }

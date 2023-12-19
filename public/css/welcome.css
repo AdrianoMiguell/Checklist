@@ -1,92 +1,56 @@
-body{
-    min-height: 90vh;
-    color: rgb(var(--light-c));
+@media screen and (min-width: 770px) {
+    .messageImg img {
+        width: 500px !important;
+    }
 }
 
-.efeitoImg {
-    margin: 0;
-    position: relative;
+.divMessage {
+    display: flex;
+    min-height: 400px;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.messageImg,
+.messageText {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-image: url("/img/desk-organizada.jpg");
-    background-attachment: fixed;
-    background-clip: content-box;
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    height: 600px;
-    width: 100%;
-    /* box-shadow: 0 0 75px rgba(var(--main-c), .75) inset; */
+    flex-grow: 1;
+    gap: 1rem;
 }
 
-.msg_welcome {
-    position: absolute;
-    margin: 15px 10em;
+.messageImg img {
+    width: 350px;
+    height: auto;
 }
 
-.msg_welcome h1,
-.msg_welcome .fraseMotivacional {
+.messageText {
+    width: 350px;
+    padding: 0 2rem;
+    color: rgb(var(--light-c));
+    text-shadow: 0.5px 0.5px 0.5px rgba(var(--sec-c), 0.75);
+    flex-direction: column;
     text-align: center;
-    color: rgb(var(--quin-c));
-    text-shadow: .25px .25px .5px rgb(var(--dark-c));
 }
 
-.msg_welcome h1 {
-    font-size: 25pt;
+.messageText h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26pt;
     font-weight: 650;
 }
 
-.msg_welcome .fraseMotivacional {
-    font-size: 13pt;
+.messageText .fraseMotivacional {
+    font-size: 15pt;
     font-weight: 450;
 }
 
-.cardSection {
-    position: relative;
-    margin: 10rem 5rem;
-}
-
-.cardSection>.section {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-around;
-    gap: 25px 15px;
-}
-
-.titleCard {
-    margin: 1.5em 0;
-    text-align: center;
-    color: rgb(var(--quin-c));
-}
-
-.card {
-    width: 225px;
-    height: 225px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    background-color: rgb(var(--quin-c));
-    border: none;
-}
-
-.imgCard {
-    width: 100%;
-    height: 100%;
-    background-position: center right;
-    background-size: cover;
-}
-
-.textCard {
-    padding: .25em 0;
-    color: rgb(var(--sec-c));
-    font-weight: 600;
-    border-radius: 5px;
-}
-
-.inviteClick{
+.inviteClick {
     margin: 1.5rem auto;
-    color: rgb(var(--light-c));
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
 }
