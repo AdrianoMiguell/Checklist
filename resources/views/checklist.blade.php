@@ -18,7 +18,7 @@
         @if (isset($tasks) && count($tasks) > 0)
             <div class="checklist-task">
                 @foreach ($tasks as $key => $t)
-                    <div class="d-flex justify-content-between px-4 rounded-1">
+                    <div class="task d-flex justify-content-between rounded-1">
                         <form action="{{ route('task.status') }}" method="POST" class="d-flex gap-2 align-items-center w-100"
                             id="form{{ $key }}">
                             @csrf
@@ -26,10 +26,10 @@
                                 onChange="this.form.submit()"
                                 @if ($t->conclusion == true) @checked(true)
                                 @class(['task-checked' => true]) @endif>
-                            <label for="status{{ $key }}" class="d-block w-100" style="cursor: pointer;">
+                            <label for="status{{ $key }}" class="d-block w-100 checklist-info" style="cursor: pointer;">
                                 <div class="d-grid text-start">
-                                    <span>{{ $t->description }}</span>
-                                    <span style="font-size: 7pt;">
+                                    <span class="desc">{{ $t->description }}</span>
+                                    <span class="hour">
                                         {{ date('H:i', strtotime($t->start_time)) }}
                                         -
                                         {{ date('H:i', strtotime($t->end_time)) }}
