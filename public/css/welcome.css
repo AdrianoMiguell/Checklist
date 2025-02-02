@@ -1,0 +1,56 @@
+@media screen and (min-width: 770px) {
+    .messageImg img {
+        width: 500px !important;
+    }
+}
+
+.divMessage {
+    display: flex;
+    min-height: 400px;
+    height: 85vh;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.messageImg,
+.messageText {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    gap: 1rem;
+}
+
+.messageImg img {
+    width: 350px;
+    height: auto;
+}
+
+.messageText {
+    width: 350px;
+    padding: 0 2rem;
+    color: rgb(var(--light-c));
+    text-shadow: 0.5px 0.5px 0.5px rgba(var(--sec-c), 0.75);
+    flex-direction: column;
+    text-align: center;
+}
+
+.messageText h1 {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 26pt;
+    font-weight: 650;
+}
+
+.messageText .fraseMotivacional {
+    font-size: 15pt;
+    font-weight: 450;
+}
+
+.inviteClick {
+    margin: 1.5rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}

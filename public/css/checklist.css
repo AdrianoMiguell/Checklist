@@ -1,0 +1,164 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&family=Inter&Architects+Daughter&display=swap");
+
+@media screen and (min-width: 1440px) {
+    .checklist-info .desc {
+        font-size: 18pt;
+    }
+    .checklist-info .hour {
+        font-size: 13pt;
+    }
+}
+@media screen and (min-width: 768px) and (max-width: 1439px) {
+    .checklist-info .desc {
+        font-size: 15pt;
+    }
+    .checklist-info .hour {
+        font-size: 11pt;
+    }
+}
+@media screen and (min-width: 480px) and (max-width: 768px) {
+    .checklist-info .desc {
+        font-size: 12pt;
+    }
+    .checklist-info .hour {
+        font-size: 8pt;
+    }
+    .checklist-task .task {
+        padding: 0.5em 0.5em !important;
+    }
+}
+@media screen and (max-width: 480px) {
+    .checklist-info .desc {
+        font-size: 10pt;
+    }
+    .checklist-info .hour {
+        font-size: 6pt;
+    }
+    .checklist-task .task {
+        padding: 0.5em 0.25em !important;
+    }
+    .actions {
+        flex-direction: column !important;
+    }
+}
+
+body {
+    background-color: rgb(var(--dark-c)) !important;
+    color: white !important;
+    overflow-x: hidden !important;
+}
+
+nav {
+    background-color: rgba(var(--light-c), 0.1);
+}
+
+.navbar-title {
+    font-size: 25pt;
+    font-family: "Architects Daughter", cursive;
+    color: rgb(var(--sec-c)) !important;
+    text-shadow: 0.5px 0.5px 0.5px rgba(var(--quin-c), 0.75) !important;
+}
+
+.img-search {
+    position: absolute;
+    top: 30%;
+    left: 30%;
+    width: 250px;
+    height: 250px;
+}
+
+.formChecklist {
+    position: relative;
+    width: 250px;
+    height: auto;
+    background-color: rgb(var(--quin-c));
+    color: rgb(var(--tert-c));
+}
+.formChecklist > legend {
+    color: rgb(var(--sec-c));
+}
+
+.checklists {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5em;
+}
+
+.checklist-card {
+    order: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: aliceblue;
+    outline: none;
+    background-color: rgba(var(--light-c), 0.1);
+    width: 30em;
+    margin: 1em 0 1em 3em;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    transition: 0.25s linear;
+}
+
+.checklist-card:hover,
+.checklist-card:active,
+.checklist-card:focus,
+.checklist-card:focus-visible {
+    box-shadow: 0 0 10px rgba(var(--tert-c), 0.5);
+}
+
+.checklist-card .checklist-date {
+    font-size: small;
+    color: rgba(var(--light-c), 0.85);
+}
+
+.checklist-task {
+    margin: 0.75em 0;
+    border-radius: 5px;
+    display: grid;
+    row-gap: 1em;
+    padding: 0.75em;
+}
+.checklist-task > div {
+    background-color: rgba(var(--light-c), 0.1);
+    border: 1px solid rgba(var(--light-c), 0.1);
+}
+.checklist-task .task {
+    padding: 0.5em 1.5em;
+}
+
+.task-checked ~ label {
+    color: rgb(var(--tert-c));
+    text-decoration: line-through !important;
+}
+
+.actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.img-dashboard-empty {
+    width: 225px;
+}
+
+.datePassed {
+    order: 3;
+    background-color: rgba(255, 94, 108, 0.2) !important;
+}
+.datePassed:hover {
+    box-shadow: 0 0 1px 1px rgb(255, 94, 108);
+}
+.datePassed .listDate {
+    color: rgb(255, 145, 154) !important;
+}
+.dateAgo {
+    order: 1;
+    background-color: rgba(253, 233, 165, 0.2) !important;
+}
+.dateAgo:hover {
+    box-shadow: 0 0 1px 1px rgb(255, 233, 159);
+}
+.dateAgo .listDate {
+    color: rgb(255, 233, 159) !important;
+}

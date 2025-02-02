@@ -1,0 +1,77 @@
+@import "./components.css";
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none !important;
+}
+
+/* Cores: 
+    #teste{
+        color: #1168FF;
+        color: #1FFA8A;
+        color: #86F4C1;
+        color: #4DA3A1;
+        color: #487070;
+    }
+    */
+    #teste{
+        color: rgb(21, 68, 148);
+        color: #1ffa8a;
+        color: rgb(31, 250, 138);
+        color: rgb(134, 244, 193);
+        color: rgb(77, 163, 161);
+        color: rgb(72, 112, 112);
+        color: rgb(45, 45, 60);
+        color: rgb(239, 239, 239);
+    }
+    
+:root{
+    --main-c: 21, 68, 148;
+    --sec-c: 31, 250, 138;
+    --tert-c: 134, 244, 193;
+    --quat-c: 77, 163, 161;
+    --quin-c: 72, 112, 112;
+    --dark-c: 45, 45, 60;
+    --light-c: 239, 239, 239;
+}
+
+body{
+    min-height: 100vh;
+}
+
+.alert-remove{
+    opacity: 0;
+    visibility: hidden;
+    animation: alertRemove 1s linear;
+}
+
+@keyframes alertRemove {
+    0%{
+        visibility: visible;
+        opacity: 1;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        visibility: visible;
+        opacity: 0;
+    }
+}
+
+a {
+    text-decoration: none !important;
+    color: rgb(var(--tert-c));
+}
+
+footer{
+    margin-top: 5rem !important;
+}
+.footerPosAbsolute{
+    position: absolute;
+    bottom: 0;
+    left: 10%;
+    right: 10%;
+}
