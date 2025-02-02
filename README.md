@@ -3,11 +3,13 @@
 
 Sistema de checklist para organização de tarefas diárias, semanais mensais. Feito em laravel.
 <p align="right"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="150" alt="Laravel Logo"></a></p>
+
 ## Inicio
 
 O github disponibiliza de diversos modos para fazer upload do codigo. 
+
 <p align="center"> 
-<img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/checklist-git-upload-code.png" width="400" alt="Upload code">
+<img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/checklist-git-upload-code.png" width="550" alt="Upload code">
 </p>
 Aqui estão duas dessas formas:
 <p style="display: block"> 
@@ -43,9 +45,11 @@ Aqui estão duas dessas formas:
 
 <img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/checklist-create-database.png" width="600" alt="criando o database" />
 
--- Agora, vá a raiz do código, copie um arquivo chamado  ``` .env.example ```  e cole-o nesse mesmo local.
+-- Agora, vá a raiz do código, copie um arquivo chamado  ``` .env.example ```  e cole-o nesse mesmo local, trocando o nome para apenas ```.env```.
 
 -- Encontre esse trecho do código ``` DB_DATABASE ```  e troque o nome do banco, pelo nome do banco de dados que você acabou de criar. 
+
+--Também encontre o trecho do código ```FILESYSTEM_DISK``` e troque o valor "local" para "public".
 
 <img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/checklist-copiar-colar-.env-e-renomear-DB_DATABASE.png" width="600" alt="criando o database" />
 
@@ -55,6 +59,8 @@ As seguintes tabelas devem aparecer no banco de dados.
 <img src="https://github.com/AdrianoMiguell/Checklist/blob/main/.github/github_images/checklist-tabelas-criadas.png" width="600" alt="criando o database" />
 
 -- Agora, execute esse código no terminal, para geração de uma chave criptografada exigida pelo artisan: ``` php artisan key:generate ```
+
+-- Execute também o código no terminal, para gerar um link entre a pasta "public" e "storage": ``` php artisan storage:link ```
 
 -- Finalmente, execute o código no terminal, para visualização do sistema:  ``` php artisan serve ``` . 
 
