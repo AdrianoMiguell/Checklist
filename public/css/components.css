@@ -51,7 +51,7 @@
 .btnG-growing-anim {
     position: relative;
     overflow: hidden;
-    padding: 2.5px 6px;
+    padding: 2.5px 5px;
     border-radius: 50%;
     transition: 0.5s;
     width: var(--tam-new-list);

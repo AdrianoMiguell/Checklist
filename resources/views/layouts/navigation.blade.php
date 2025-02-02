@@ -8,7 +8,7 @@
             @if (Route::has('login'))
                 <ul class="navbar-nav">
                     @auth
-
+{{-- 
                         <div class="navbar-collapse-inline d-flex flex-row-reverse gap-3 align-items-center">
                             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -17,17 +17,8 @@
                                 <i class="bi bi-x-lg cloused block"></i>
                             </button>
 
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <div class="collapse navbar-collapse" id="navbarSupportedContent"> --}}
                                 <ul class="navbar-nav">
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#dicas">Dicas de uso</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#sobre">Sobre</a>
-                                    </li>
-                                    <li class="nav-item">
-                                        <a class="nav-link" href="#contato">Contato</a>
-                                    </li>
                                     <li class="nav-item dropdown position-relative">
                                         <a class="nav-link text-truncate" href="#" role="button"
                                             data-bs-toggle="dropdown" aria-expanded="false">
@@ -54,8 +45,8 @@
                                         </ul>
                                     </li>
                                 </ul>
-                            </div>
-                        </div>
+                            {{-- </div>
+                        </div> --}}
                     @else
                         <div class="d-flex">
                             <a href="{{ route('login') }}" class="btnG btnG-light-green">Log
